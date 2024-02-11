@@ -2,7 +2,7 @@
 CXX = clang++
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -std=c++11
+CXXFLAGS = -Wall -Wextra -std=c++11 -g
 
 # Source files
 SOURCES = main.cpp SkipTable.cpp Grepy.cpp
