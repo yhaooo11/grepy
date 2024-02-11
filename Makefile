@@ -4,8 +4,11 @@ CXX = clang++
 # Compiler flags
 CXXFLAGS = -Wall -Wextra -std=c++11 -g
 
-# Source files
-SOURCES = main.cpp SkipTable.cpp Grepy.cpp program_options.cpp
+# Source files directory
+SRCDIR = ./src
+
+# Source files (automatically detect .cpp files in SRCDIR)
+SOURCES = $(wildcard $(SRCDIR)/*.cpp)
 
 # Object files (generated from source files)
 OBJECTS = $(SOURCES:.cpp=.o)

@@ -13,14 +13,11 @@ public:
     SkipTable(string pattern);
     ~SkipTable();
 
-    size_t get_bc_skip(char c);
+    size_t get_bc_skip(char c, int pat_len);
     size_t get_gs_skip(int j);
 
     void printData()
     {
-        cout << "Pattern: " << pattern << endl;
-        cout << "Pattern Length: " << pat_len << endl;
-
         cout << "Boyer-Moore Bad Character Skip Table:" << endl;
         for (const auto &entry : bc_skip)
         {
@@ -35,16 +32,12 @@ public:
     }
 
 private:
-    string pattern;
-    int pat_len;
-
     unordered_map<char, size_t> bc_skip;
     vector<size_t> gs_skip;
 
-    void init_bc_skip();
-    void init_gs_skip();
+    void init_bc_skip(string pattern);
+    void init_gs_skip(string pattern);
 
-    bool is_prefix(int pos);
-
-    int suffix_len(int pos);
+    bool is_prefix(string pattern, int pos);
+    int suffix_len(string pattern, int pos);
 };

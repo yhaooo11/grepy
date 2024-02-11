@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include <string>
 #include <utility>
-#include "SkipTable.h"
+#include "SkipTable.hpp"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "Grepy.h"
+#include "Grepy.hpp"
 #include <fstream>
 #include <iostream>
 
@@ -39,7 +39,7 @@ void Grepy::search()
         }
         else
         {
-            i += max(this->skip_table->get_bc_skip(this->buffer[i]), this->skip_table->get_gs_skip(j));
+            i += max(this->skip_table->get_bc_skip(this->buffer[i], this->pattern.length()), this->skip_table->get_gs_skip(j));
         }
     }
 

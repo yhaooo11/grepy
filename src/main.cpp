@@ -1,5 +1,5 @@
-#include "SkipTable.h"
-#include "Grepy.h"
+#include "SkipTable.hpp"
+#include "Grepy.hpp"
 
 using namespace std;
 
