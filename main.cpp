@@ -1,12 +1,19 @@
 #include "SkipTable.h"
 #include "Grepy.h"
-#include <iostream>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-  Grepy g("text.txt", "text");
+  if (argc < 3)
+  {
+    cerr << "Usage: ./grepy <pattern> <filename>" << endl;
+    return EXIT_FAILURE;
+  }
+
+  // program_options::parse(argc, argv);
+
+  Grepy g(argv[2], argv[1]);
 
   g.search();
 }

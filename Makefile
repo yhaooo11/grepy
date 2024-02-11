@@ -5,13 +5,13 @@ CXX = clang++
 CXXFLAGS = -Wall -Wextra -std=c++11 -g
 
 # Source files
-SOURCES = main.cpp SkipTable.cpp Grepy.cpp
+SOURCES = main.cpp SkipTable.cpp Grepy.cpp program_options.cpp
 
 # Object files (generated from source files)
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Output executable
-EXECUTABLE = main
+EXECUTABLE = grepy
 
 # Build rule
 all: $(EXECUTABLE)
