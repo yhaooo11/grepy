@@ -16,6 +16,9 @@ OBJECTS = $(SOURCES:.cpp=.o)
 # Output executable
 EXECUTABLE = grepy
 
+# Installation directory
+INSTALL_DIR = /usr/local/bin
+
 # Build rule
 all: $(EXECUTABLE)
 
@@ -26,6 +29,12 @@ all: $(EXECUTABLE)
 # Link object files into the executable
 $(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $(EXECUTABLE)
+
+# Install rule
+install: $(EXECUTABLE)
+	@echo "Installing $(EXECUTABLE) to $(INSTALL_DIR)"
+	sudo cp $(EXECUTABLE) $(INSTALL_DIR)
+	@echo "$(EXECUTABLE) installed to $(INSTALL_DIR)"
 
 # Clean rule
 clean:
